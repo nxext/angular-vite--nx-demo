@@ -8,3 +8,40 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'demo';
 }
+
+if (import.meta.vitest) {
+  const { it, expect, describe, beforeEach } = import.meta.vitest
+
+  const { TestBed } = await import('@angular/core/testing');
+  const { RouterTestingModule } = await import('@angular/router/testing');
+  const { NxWelcomeComponent } =  await import('./nx-welcome.component');
+
+  describe('AppComponent', () => {
+    beforeEach(async () => {
+      await TestBed.configureTestingModule({
+        imports: [RouterModule.forRoot([])],
+        declarations: [AppComponent, NxWelcomeComponent],
+      }).compileComponents();
+    });
+
+    it('should create the app', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.componentInstance;
+      expect(app).toBeTruthy();
+    });
+
+    it(`should have as title 'demo'`, () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      const app = fixture.componentInstance;
+      expect(app.title).toEqual('demo');
+    });
+
+    it('should render title', () => {
+      const fixture = TestBed.createComponent(AppComponent);
+      fixture.detectChanges();
+      const compiled = fixture.nativeElement as HTMLElement;
+      expect(compiled.querySelector('h1')?.textContent).toContain('Welcome demo');
+    });
+  });
+
+}
