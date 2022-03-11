@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo';
+  menu = { name: 'hello' }
 }
 
 if (import.meta.vitest) {
