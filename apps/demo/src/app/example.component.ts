@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { MenuItem } from './core';
+import type { MenuItem } from './core';
 
 @Component({
   selector: 'angular-example-interface',
