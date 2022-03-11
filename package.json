@@ -20,6 +20,7 @@
     "@angular/router": "~13.1.0",
     "@nxext/angular": "^13.0.0-alpha.1",
     "@nxext/vite": "^13.2.4",
+    "@swc/core": "^1.2.152",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
