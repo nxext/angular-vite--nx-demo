@@ -27,7 +27,6 @@
       }
     ]
   },
-  "projects": {},
   "cli": {
     "defaultCollection": "@nxext/angular"
   },
